@@ -32,7 +32,7 @@ function draw() {
   
   hasCollided(bullet,wall);
     
-damage = 0.5*weight*speed*speed/thickness*thickness*thickness;
+damage = (0.5*weight*speed*speed)/(thickness*thickness*thickness);
 
 if(damage < 10){
 
