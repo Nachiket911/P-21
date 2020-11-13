@@ -30,7 +30,7 @@ function draw() {
 
     }*/
   
-  hasCollided(bullet,wall);
+if(hasCollided(bullet,wall) === true){
     
 damage = (0.5*weight*speed*speed)/(thickness*thickness*thickness);
 
@@ -38,7 +38,7 @@ if(damage < 10){
 
   wall.shapeColor = "green";
   
-  stroke("red");
+  stroke("green");
   textSize("24");
   text("effective", 600, 20);
   
@@ -52,6 +52,12 @@ if(damage < 10){
 
 } 
 
+}else if(hasCollided(bullet,wall) === false) {
+
+  wall.shapeColor = rgb(0,0,255);  
+
+}
+
   drawSprites();
   
 }
@@ -63,8 +69,10 @@ function hasCollided(bullet,wall){
   
   if(bulletRightEdge>=wallLeftEdge){
   
-    return true
+    return true;
+
   }
   
   return false;
+
 }
